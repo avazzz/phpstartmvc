@@ -1,20 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello, world!</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="maxcdn.bootstrap.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://css.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://css.maxcdn.com/respond/1.4.2/respond/min.js"></script>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Пользователи</h1>
 
+    <?php foreach ($users as $user) {  ?>
+    <div class="panel panel-default">
+        <div class="panel-heading"><?php echo $user->name; ?></div>
+        <div class="panel-body"><?php echo $user->email; ?></div>
+    </div>
+<?php } ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
