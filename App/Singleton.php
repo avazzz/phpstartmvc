@@ -2,10 +2,8 @@
 
 namespace App;
 
-abstract class Singleton
+trait Singleton
 {
-
-
     protected static $instance;
 
     protected function __construct()
