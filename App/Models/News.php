@@ -3,6 +3,13 @@
 namespace App\Models;
 
 use App\Model;
+/**
+*Class News
+*@pacage App\Models
+*
+*@property \App\Models\Author $author
+*/
+
 
 class News
     extends Model
@@ -13,4 +20,30 @@ class News
     public $lead;
     public $author_id;
 
+    /**
+    *LAZY LOAD
+    *
+    *@param $k
+    *@return null
+    */
+    public function __get($k)
+    {
+        switch ($k) {
+        case 'author':
+            return Author::findById($this->author_id);
+            break;
+        default:
+            return null;
+        }
+    }
+    public function __isset($k)
+    {
+        switch ($k) {
+        case 'author':
+            return !empty($this->author_id);
+            break;
+        default:
+            return false;
+        }
+    }
 }
